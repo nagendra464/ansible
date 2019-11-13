@@ -4,6 +4,9 @@
   tasks:
   - name: pinging the inventory files
     ping:
+  - name: Install tree
+    apt:
+      name: tree
   - name: Install the apache2
     apt:
       name: apache2
