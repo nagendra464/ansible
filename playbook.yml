@@ -10,6 +10,7 @@
   - name: Install the apache2
     apt:
       name: apache2
+      update_cache: yes
   - name: start apache2
     service:
       name: apache2
