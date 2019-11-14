@@ -5,6 +5,5 @@
   - name: Remove "apache2" package
     apt:
       name: apache2
-      state: absent
-    when: ansible_os_family =="Debian"   
+      state: absent  
 	  
