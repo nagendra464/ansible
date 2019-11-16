@@ -16,7 +16,7 @@
   - name: install Redhat8
     yum:
      name: "{{webservsredhat}}"
-     state: present
+     state: absent
     when: ansible_os_family =="RedHat"
   - name: start webserver on Redhat8
     service:
