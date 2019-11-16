@@ -1,0 +1,3 @@
+---
+javaonubuntu: openjdk-8-jre
+installjava: present
