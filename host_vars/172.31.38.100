@@ -1,2 +1,2 @@
 ---
-javaonredhat: java-11-openjdk-devel
+javaonredhat: java-1.8.0-openjdk-devel

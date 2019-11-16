@@ -1,3 +1,2 @@
 ---
-javaonredhat: java-1.7.0-openjdk-devel
-installjava: present
+javaonredhat: java-1.8.0-openjdk-devel
