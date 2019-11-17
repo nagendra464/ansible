@@ -1,5 +1,6 @@
 # This is ubuntu machine
 ---
-installjava: openjdk-9-jre
+installjava: tree
+# installjava: openjdk-9-jre
 # webserstate: present
 webabsent: absent
