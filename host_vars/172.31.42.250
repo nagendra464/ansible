@@ -1,4 +1,4 @@
 # ubuntu-node2 machine
 ---
-installjavaold: openjdk-7-jre
+installjavaold: openjdk-8-jre
 webserupdate: present
