@@ -1,5 +1,5 @@
 # This is ubuntu machine
 ---
 installjava: openjdk-9-jre
-webserstate: present
+# webserstate: present
 webabsent: absent

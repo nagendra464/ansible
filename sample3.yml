@@ -1,0 +1,9 @@
+---
+- name: remove the java package
+  hosts: ubuntuservers
+  become: yes
+  tasks: 
+  - name: remove the java in ubuntu machine
+    apt:
+      name: openjdk-9-jre
+      state: absent
