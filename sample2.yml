@@ -6,7 +6,7 @@
   - name: Install java in ubuntu
     apt:
       name: "{{installjava}}"
-      state: "{{javastate}}"
+      state: "{{webserstate}}"
     when: ansible_os_family =="Debian"
   - name: remove the java
     service:
