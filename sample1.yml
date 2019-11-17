@@ -14,6 +14,11 @@
     service:
       name: "{{installapache2}}"
       state: "{{webserverstart}}"
-      enabled: yes    
+      enabled: yes   
+  - name: Install the tree
+    apt:
+      name: "{{installtree}}"
+      state: "{{webserstate}}"     
+      
     
     
