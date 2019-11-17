@@ -1,3 +1,6 @@
 ---
 installapache2: apache2
+webserstate: present
+# for start the apache
+webserverstart: started
 installtree: tree
