@@ -4,5 +4,5 @@ webserstate: present
 # for start the webservers
 webserverstart: started
 installtree: tree
-installjava: openjdk-9-jre
+installjava: openjdk-8-jre
 webabsent: absent
