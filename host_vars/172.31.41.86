@@ -2,5 +2,5 @@
 ---
 installjava: openjdk-8-jre
 webserstate: present
-weblatest: latest
+
 
