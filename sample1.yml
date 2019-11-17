@@ -5,7 +5,6 @@
   tasks:
   - name: Ping the ubuntuservers
     ping:
-
   - name: Install the apache2
     apt:
       name: "{{installapache2}}"
