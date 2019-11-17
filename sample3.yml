@@ -5,6 +5,7 @@
   tasks: 
   - name: remove the java in ubuntu machine
     yum:
-      name: java-1.8.0-openjdk
-      state: absent
+      name: "{{installjava}}"
+      state: "{{javaabsent}}"
+      autoremove: yes
     when: ansible_os_family =="RedHat"  
