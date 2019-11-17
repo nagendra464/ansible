@@ -1,11 +1,11 @@
 ---
 - name: remove the java package
-  hosts: redhatservers
+  hosts: ubuntuservers
   become: yes
   tasks: 
   - name: remove the java in ubuntu machine
     yum:
       name: "{{installjava}}"
-      state: "{{javaabsent}}"
+      state: "{{webabsent}}"
       autoremove: yes
-    when: ansible_os_family =="RedHat"  
+    when: ansible_os_family =="Debian"  
