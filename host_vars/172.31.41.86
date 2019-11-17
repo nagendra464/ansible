@@ -1,5 +1,6 @@
 # This is ubuntu-node1 machine
 ---
-installjava: openjdk-9-jre
+installjava: openjdk-8-jre
 webserstate: present
+weblatest: latest
 
