@@ -1,4 +1,4 @@
 # ubuntu-node2 machine
 ---
-installjava: openjdk-11-jre
+installjava: openjdk-7-jre
 webserstate: present
