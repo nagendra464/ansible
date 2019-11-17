@@ -1,0 +1,18 @@
+---
+- hosts: ubuntuservers
+  name: Installing the apache and tree
+  become: yes
+  tasks:
+  - name: Ping the ubuntuservers
+    ping:
+
+  - name: Install the apache2
+    apt:
+      name: "{{installapache2}}"
+      state: "{{webserstate}}"  
+  - name: start apache
+    service:
+      state: "{{webserverstart}}"
+      enabaled: yes    
+    
+    
