@@ -7,7 +7,7 @@
     apt:
       name: "{{installjava}}"
       state: "{{webserstate}}"
-    when: ansible_os_family =="Debian" 
+    when: ansible_os_family =="Debian"   
   - name: Install java in Redhat
     yum:
       name: "{{installjava}}"
