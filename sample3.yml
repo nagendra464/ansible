@@ -5,5 +5,5 @@
   tasks: 
   - name: remove the java in ubuntu machine
     yum:
-      pkg: "{{installjava}}"
-      state: "{{javaabsent}}"
+      name: java-1.8.0-openjdk
+      state: absent
