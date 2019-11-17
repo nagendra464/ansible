@@ -4,7 +4,7 @@
   become: yes
   tasks: 
   - name: remove the java in ubuntu machine
-    yum:
+    package:
       name: "{{installjava}}"
       state: "{{webabsent}}"
       autoremove: yes
