@@ -6,12 +6,13 @@
   - name: Install java in ubuntu
     apt:
       name: "{{installjava}}"
-      state: "{{webserstate}}"
+      state: "{{javastate}}"
     when: ansible_os_family =="Debian"
   - name: remove the java
     service:
       name: "{{installjava}}"
-      state: absent       
+      state: "{{webserstate}}"
+    when: ansible_os_family =="Debian"         
   - name: Install java in Redhat
     yum:
       name: "{{installjava}}"
