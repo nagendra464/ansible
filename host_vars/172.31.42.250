@@ -1,5 +1,4 @@
-# This is ubuntu-node1 machine
+# ubuntu-node2 machine
 ---
 installjava: openjdk-9-jre
 webserstate: present
-
