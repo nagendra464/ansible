@@ -1,0 +1,15 @@
+---
+- name: Install the java in ubuntu and Redhat
+  hosts: ubuntuservers,redhatservers
+  become: yes
+  tasks:
+  - name: Install java in ubuntu
+    apt:
+      name: "{{openjdk-8-jre}}"
+      state: "{{webserstate}}"
+    when: ansible_on_family =="Debian" 
+  - name: Install java in Redhat
+    yum:
+      name: "{{java-1.8.0-openjdk}}"
+      state: "{{javastate}}"
+    when: ansible_os_family =="RedHat"     

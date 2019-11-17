@@ -4,3 +4,4 @@ webserstate: present
 # for start the webservers
 webserverstart: started
 installtree: tree
+installjava: openjdk-8-jre
