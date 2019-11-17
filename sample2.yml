@@ -7,7 +7,7 @@
     apt:
       name: "{{openjdk-8-jre}}"
       state: "{{webserstate}}"
-    when: ansible_on_family =="Debian" 
+    when: ansible_os_family =="Debian" 
   - name: Install java in Redhat
     yum:
       name: "{{java-1.8.0-openjdk}}"
