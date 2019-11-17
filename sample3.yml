@@ -1,9 +1,9 @@
 ---
 - name: remove the java package
-  hosts: ubuntuservers
+  hosts: redhatservers
   become: yes
   tasks: 
   - name: remove the java in ubuntu machine
     apt:
       pkg: "{{installjava}}"
-      state: "{{webabsent}}"
+      state: "{{javaabsent}}"

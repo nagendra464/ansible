@@ -1,4 +1,4 @@
 # Redhat machine
 ---
-installjava: java-11-openjdk-devel
-javastate: present
+installjava: java-1.8.0-openjdk
+javaabsent: absent

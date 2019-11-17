@@ -1,6 +1,6 @@
 ---
 - name: Install the java in ubuntu and Redhat
-  hosts: redhatservers
+  hosts: ubuntuservers,redhatservers
   become: yes
   tasks:
   - name: Install java in ubuntu
