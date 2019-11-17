@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntuservers
+- hosts: webservers
   name: Installing the apache and tree
   become: yes
   tasks:
@@ -9,15 +9,18 @@
     apt:
       name: "{{installapache2}}"
       state: "{{webserstate}}"  
+    when: ansible_os_family =="Debian"  
   - name: start apache
     service:
       name: "{{installapache2}}"
       state: "{{webserverstart}}"
       enabled: yes   
+    when: ansible_os_family =="Debian"  
   - name: Install the tree
     apt:
       name: "{{installtree}}"
       state: "{{webserstate}}"   
+    when: ansible_os_family =="Debian"  
      
       
     
