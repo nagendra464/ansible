@@ -19,12 +19,7 @@
     apt:
       name: "{{installtree}}"
       state: "{{webserstate}}"   
-    when: ansible_os_family =="Debian"
-  - name: install the tree
-    yum:
-      name: "{{installtree}}"
-      state: "{{javastate}}"
-    when: ansible_os_family =="RedHat"        
+     
       
     
     
