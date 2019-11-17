@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntuservers
+- hosts: ubuntuservers,redhatservers
   name: Installing the apache and tree
   become: yes
   tasks:
@@ -18,7 +18,13 @@
   - name: Install the tree
     apt:
       name: "{{installtree}}"
-      state: "{{webserstate}}"     
+      state: "{{webserstate}}"   
+    when: ansible_os_family =="Debian"
+  - name: install the tree
+    yum:
+      name: "{{installtree}}"
+      state: "{{javastate}}"
+    when: ansible_os_family =="RedHat"        
       
     
     
