@@ -27,6 +27,11 @@
       name: "{{installapache2}}"
       state: "{{javastate}}"  
     when: ansible_os_family =="RedHat"  
+    - name: start apache2
+      service:
+        name: "{{installapache2}}"
+        state: "{{javastate}}"
+        enabled: yes
      
       
     
