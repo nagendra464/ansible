@@ -1,8 +1,8 @@
 # How to remove the java and update
 ---
-- hosts: ubuntuservers
+- hosts: webservers
   become: yes
-  tasks:
+  tasks:  
   - name: remove the java
     service:
       name: "{{installjava}}"
