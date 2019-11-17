@@ -4,3 +4,4 @@ javastate: present
 installapache2: httpd
 webserverstart: started
 installtree: tree
+javaabsent: absent
