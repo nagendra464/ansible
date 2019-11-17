@@ -13,6 +13,6 @@
   - name: start apache
     service:
       state: "{{webserverstart}}"
-      enabaled: yes    
+      enabled: yes    
     
     
