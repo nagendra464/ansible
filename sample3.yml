@@ -5,5 +5,5 @@
   tasks: 
   - name: remove the java in ubuntu machine
     apt:
-      name: openjdk-9-jre
-      state: absent
+      pkg: "{{installjava}}"
+      state: "{{webabsent}}"
