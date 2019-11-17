@@ -12,6 +12,7 @@
       state: "{{webserstate}}"  
   - name: start apache
     service:
+      name: "{{installapache2}}"
       state: "{{webserverstart}}"
       enabled: yes    
     
