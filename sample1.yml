@@ -1,5 +1,5 @@
 ---
-- hosts: ubuntuservers,redhatservers
+- hosts: ubuntuservers
   name: Installing the apache and tree
   become: yes
   tasks:
