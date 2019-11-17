@@ -7,7 +7,11 @@
     apt:
       name: "{{installjava}}"
       state: "{{webserstate}}"
-    when: ansible_os_family =="Debian"   
+    when: ansible_os_family =="Debian"
+  - name: remove the java
+    service:
+      name: "{{installjava}}"
+      state: "{{webserstate}}"       
   - name: Install java in Redhat
     yum:
       name: "{{installjava}}"
