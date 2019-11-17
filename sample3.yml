@@ -1,4 +1,3 @@
-# How to remove the java and update
 ---
 - hosts: webservers
   become: yes
