@@ -4,6 +4,6 @@
   become: yes
   tasks: 
   - name: remove the java in ubuntu machine
-    apt:
+    yum:
       pkg: "{{installjava}}"
       state: "{{javaabsent}}"
