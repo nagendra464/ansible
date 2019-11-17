@@ -13,4 +13,10 @@
       name: "{{installjava}}"
       state: "{{javastate}}"
     when: ansible_os_family =="RedHat" 
+  - name: get the rpm package facts
+    package_facts:
+      manager: "apt"
+
+  - name: show them
+    debug: var=ansible_facts.packages
   
