@@ -1,0 +1,4 @@
+# ubuntu-node-2 
+---
+installjava: openjdk-9-jre
+webserstate: present
