@@ -11,5 +11,5 @@
   - name: Install java in Redhat
     yum:
       name: "{{installjava}}"
-      state: "{{javastate}}"
+      state: "{{uninstalljava}}"
     when: ansible_os_family =="RedHat"     
