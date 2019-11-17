@@ -1,4 +1,4 @@
 # Redhat machine
 ---
-installjava: java-1.7.0-openjdk
+installjava: java-1.9.0-openjdk
 javastate: present
