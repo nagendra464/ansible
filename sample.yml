@@ -1,13 +1,13 @@
 ---
 - name: create the file and install apache2
-  hosts: all
+  hosts: ubuntuservers
   become: yes
   tasks:
   - name: create file
     file:
-      path: /home/cm/sample.txt
-      owner: cm
-      group: cm
+      path: /home/ansible/sample.txt
+      owner: ansible
+      group: ansible
       mode: '0644'
       state: touch
   - name: install apache2
