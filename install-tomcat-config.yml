@@ -1,0 +1,10 @@
+---
+- name: Install the tomcat and configure
+  hosts: 172.31.35.207
+  gather_facts: false
+  become: yes
+  tasks:
+  - name: updating the repos
+    yum:
+      name: "*"
+      state: latest
