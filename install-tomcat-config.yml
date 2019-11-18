@@ -22,5 +22,4 @@
       name: java
       link: /usr/bin/java
       path: /usr/lib/jvm/{{set_java}}/bin/java
-  - name: Downloading the tomcat server
-    debug: var=tomcat_url
+  
