@@ -1,0 +1,8 @@
+---
+- name: using the include var
+  hosts: webservers
+  become: yes
+  tasks:
+  - include_vars: required_for_variable_{{ansible_os_family}}
+    debug:
+      msg: "pkg= name {{pkg}}"
