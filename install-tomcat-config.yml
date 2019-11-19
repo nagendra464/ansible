@@ -4,7 +4,7 @@
   gather_facts: false
   become: yes
   vars:
-    req_java: openjdk-9-jre
+    req_java: java-9-openjdk
     set_java: openjdk-9-jre
     req_tom_version: 9.0.27
     tomcat_port: 8080
