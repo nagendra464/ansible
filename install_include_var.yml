@@ -3,6 +3,6 @@
   hosts: webservers
   become: yes
   tasks:
-  - include_vars: required_for_variable_{{ansible_os_family}}
-    debug:
+  - include_vars: required_for_variable_{{ansible_os_family}}.yml
+  - debug:
       msg: "pkg= name {{pkg}}"
