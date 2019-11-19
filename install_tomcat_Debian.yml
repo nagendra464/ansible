@@ -7,6 +7,7 @@
     unarchive:
       src: "/usr/local/apache-tomcat-9.0.27.tar.gz"
       dest: /usr/local
+      remote_src: yes 
   - name: Remaining the apache-tomcat-9.0.27 to latest
     command: mv /usr/local/apache-tomcat-9.0.27 /usr/local/latest  
   - name: start the tomcat server
