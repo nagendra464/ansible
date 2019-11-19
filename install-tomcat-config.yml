@@ -5,7 +5,7 @@
   become: yes
   vars:
     req_java: openjdk-8-jre
-    set_java: java-8-openjdk
+    set_java: java-1.8.0-openjdk
     req_tom_version: 9.0.27
     tomcat_port: 8080
     tomcat_url: http://us.mirrors.quenda.co/apache/tomcat/tomcat-{{req_tom_version.split('.')[0]}}/v{{req_tom_version}}/bin/apache-tomcat-{{req_tom_version}}.tar.gz
