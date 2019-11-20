@@ -6,5 +6,6 @@
   tasks:
   - include_tasks: install_webserver_{{ansible_os_family}}.yml
   - include_tasks: install_java_{{ansible_os_family}}.yml
-  - include_tasks: install_tomcat_{{ansible_os_family}}.yml
+  - include_tasks: install-tomcat-config.yml
+  - include_tasks: create_file.yml
         
