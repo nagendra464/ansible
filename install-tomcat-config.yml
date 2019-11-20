@@ -27,11 +27,15 @@
     get_url:
       url: "{{tomcat_url}}"
       dest: /usr/local  
+  - name: remove directory latest 
+    file:
+      path: /usr/local/latest
+      state: absent
   - name: Extracted the tomcat
     unarchive:
       src: "/usr/local/apache-tomcat-{{req_tom_version}}.tar.gz"
       dest: /usr/local
-      remote_src: yes     
+      remote_src: yes         
   - name: stat foo
     stat: path=/usr/local/latest
     register: foo_stat
