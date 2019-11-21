@@ -31,7 +31,7 @@
        src: index.j2
        dest: /var/www/html/index.html
     when: ansible_os_family =="RedHat"
-    ignore_errors: yes 
+    ignore_errors: yes       # it won't show any failure tasks in results
   - debug:
      msg: "successfull install the all tasks" 
          
