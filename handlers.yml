@@ -7,20 +7,17 @@
     apt:
      name: apache2
      state: present
-    notify: remove
+    notify: start services
      
   - name: copy index.j2 to node server
     template:
      src: index.j2
      dest: /var/www/html/index.html
-    notify: remove
-  # under playbook we are going to write handlers 
+    notify: start services 
+      # under playbook we are going to write handlers 
   handlers:
   - name: start services
     service:
      name: apache2
      state: restarted   
-  - name: remove
-    apt:
-     name: apache2
-     state: absent     
+  

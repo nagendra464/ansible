@@ -11,7 +11,7 @@
   - name: copy index.j2 to node server
     template:
      src: index.j2
-     dest: /var/www/html/index.html
+     dest: /etc/apache2-conf
     notify: start services
   # under playbook we are going to write handlers 
   handlers:
