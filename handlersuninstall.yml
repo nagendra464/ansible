@@ -5,17 +5,17 @@
   tasks:
   - name: remove apache2
     apt:
-      name: apache2
-      state: absent
+     name: apache2
+     state: absent
     notify: remove
   - name: install tree
     apt:
-      name: tree
-      state: present
+     name: tree
+     state: present
     
-  handler:
+  handlers:
   - name: remove  
     apt:
-      name: apache2
-      state: absent
+     name: apache2
+     state: absent
    
