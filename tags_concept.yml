@@ -1,3 +1,4 @@
+# tags are used to fliter the tasks and to run particular task( --tags tagname )
 ---
 - hosts: webservers
   become: yes
