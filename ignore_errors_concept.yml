@@ -6,13 +6,13 @@
   - name: display the result
     command: "ls /home/ansible"
     register: ansible3
-  - debug: 
+    debug: 
       msg: "{{ansible3}}"
     command: "ls /home/ansible/jana"
     register: ansible1
-  - debug:
+    debug:
       msg: "{{ansible1}}"
     command: "ls /home/ansible/Devops"
     register: ansible2
-  - debug: 
+    debug: 
       msg: "{{ansible2}}"
