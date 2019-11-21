@@ -24,8 +24,8 @@
        state: present    
     - name: start apache2
       service:
-       name: httpd
-       state: present  
+       name: httpds
+       state: started  
     - name: place the index file in apache2
       template:
        src: index.j2
