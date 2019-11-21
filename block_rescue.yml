@@ -8,6 +8,6 @@
       apt: 
        name: apache2
        state: present
-    rescue:
+    rescue:           # it will display when the task is not executed
     - debug:
        msg: "the given path is not valid"   
