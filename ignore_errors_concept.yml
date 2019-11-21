@@ -3,21 +3,21 @@
   become: yes
   tasks:
   - name: linux commands execution
-    command: "ls /home/ansible"            # we are executing the linux commands
-    register: nagendra               # register key is used to store value
+    command: "ls /home/ansible"           
+    register: nagendra               
   - name: disply the result  
-    debug:                           # debug is used to display the stored value of the key
+    debug:                           
      msg: "{{nagendra}}"
   - name: linux commands execution
-    command: "ls /home/ansible/jana"            # we are executing the linux commands
+    command: "ls /home/ansible/jana"           
     register: nagendra 
-    ignore_errors: yes               # register key is used to store value
+    ignore_errors: yes            # it will display some output stderr": "ls: cannot access '/home/ansible/jana' 
   - name: disply the result  
-    debug:                           # debug is used to display the stored value of the key
+    debug:                          
      msg: "{{nagendra}}"  
   - name: linux commands execution
-    command: "ls /home/ansible/nagendra"            # we are executing the linux commands
-    register: nagendra               # register key is used to store value
+    command: "ls /home/ansible/nagendra"            
+    register: nagendra               
   - name: disply the result  
-    debug:                           # debug is used to display the stored value of the key
+    debug:                           
      msg: "{{nagendra}}"     
