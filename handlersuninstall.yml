@@ -12,11 +12,10 @@
     apt:
       name: tree
       state: present
-    notify:
     
   handler:
   - name: remove  
     apt:
-     name: apt
-     state: absent
+      name: apache2
+      state: absent
    
