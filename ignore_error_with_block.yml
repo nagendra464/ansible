@@ -23,4 +23,5 @@
       register: nagendra               
     - name: disply the nagendra files 
       debug:                           
-        msg: "{{nagendra}}"     
+        msg: "{{nagendra}}" 
+    ignore_errors: yes          
