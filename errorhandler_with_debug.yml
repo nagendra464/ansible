@@ -9,3 +9,11 @@
   - name: disply the result  
     debug:
      msg: "{{nagendra}}"
+  - name: install apache2
+    apt:
+     name: apache2
+    when: nagendra.stderr ==""
+  - name: install tree
+    apt:
+     name: tree
+    when: nagendra.stderr !=""   
