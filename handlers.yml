@@ -17,7 +17,9 @@
   # under playbook we are going to write handlers 
   handlers:
   - name: remove apache2
-    state: absent
+    apt:
+     name: apache2
+     state: absent
     
   - name: start services
     service:
