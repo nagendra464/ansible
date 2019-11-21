@@ -5,6 +5,6 @@
   - name: display the result
     command: "ls /home/ansible/Devops"
     register: ansible3
-  - debug: var= ansible3
+    debug: var= ansible3
     
       
