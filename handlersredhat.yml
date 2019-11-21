@@ -1,11 +1,11 @@
-# we can reuse the code with the help of handlers by using notify ( ubuntu)
+# we can reuse the code with the help of handlers by using notify ( redhat)
 ---
 - hosts: webservers
   become: yes
   tasks:
   - name: Install apache2
-    apt:
-     name: apache2
+    yum:
+     name: httpd
      state: present
     notify: start services   
   - name: copy index.j2 to node server
@@ -17,5 +17,5 @@
   handlers:
   - name: start services
     service:
-     name: apache2
+     name: httpd
      state: restarted     
