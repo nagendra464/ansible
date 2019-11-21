@@ -1,0 +1,9 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: installing tomcat8
+    apt:
+     name: tomcat8
+     State: present
+     update_ cache: yes
