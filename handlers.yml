@@ -7,7 +7,8 @@
     apt:
      name: apache2
      state: present
-    notify: start services   
+    notify: remove apache2 
+     
   - name: copy index.j2 to node server
     template:
      src: index.j2
@@ -15,6 +16,9 @@
     notify: start services
   # under playbook we are going to write handlers 
   handlers:
+  - name: remove apache2
+    state: absent
+    
   - name: start services
     service:
      name: apache2
