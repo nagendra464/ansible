@@ -3,10 +3,10 @@
 - hosts: webservers
   become: yes
   tasks:
-  - name: remove apache2
+  - name: install apache2
     apt:
      name: apache2
-     state: absent
+     state: present
     notify: remove
   - name: install tree
     apt:
