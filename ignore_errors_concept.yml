@@ -1,9 +1,9 @@
 ---
-- hosts: webservers
+- hosts: localhost
   become: yes
   tasks:
   - name: linux commands execution
-    command: hostname -f             # we are executing the linux commands
+    command: "ls /home/ansible"            # we are executing the linux commands
     register: nagendra               # register key is used to store value
   - name: disply the result  
     debug:                           # debug is used to display the stored value of the key
