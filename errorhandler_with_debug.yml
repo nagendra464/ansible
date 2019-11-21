@@ -1,6 +1,6 @@
 # In this we are going to handle the error depanding on first result, we are giving the conditions based on first result
 ---
-- hosts: 172.31.41.86
+- hosts: webservers
   become: yes
   tasks:
   - name: linux commands execution
@@ -13,6 +13,15 @@
     apt:
      name: apache2
     when: nagendra.stderr ==""
+  - name: updating the repos
+    apt:
+      name: "*"
+      state: latest
+  - name: install git
+    apt:  
+     name: git
+     state: present 
+    when: nagendra.stderr =="" 
   - name: install tree
     apt:
      name: tree
