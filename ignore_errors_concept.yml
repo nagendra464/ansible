@@ -3,9 +3,8 @@
   become: yes
   tasks:
   - name: display the result
-    command: ls /home/ansible
+    command: "ls /home/ansible/Devops"
     register: ansible3
-    debug: 
-      msg: "{{ansible3}}"
+  - debug: var= ansible3
     
       
