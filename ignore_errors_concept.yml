@@ -1,0 +1,9 @@
+---
+- hosts: localhost
+  become: yes
+  gather_facts: false
+  tasks:
+  - name: display the result
+    command: "ls /home/ansible"
+    register: ansible
+  - debug: var=ansible
