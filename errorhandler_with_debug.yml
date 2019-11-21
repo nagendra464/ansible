@@ -1,6 +1,6 @@
 # In this we are going to handle the error depanding on first result, we are giving the conditions based on first result
 ---
-- hosts: webservers
+- hosts: 172.31.41.86
   become: yes
   tasks:
   - name: linux commands execution
