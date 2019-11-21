@@ -1,0 +1,19 @@
+# It is used for errorhandlers,based on first task result it will continue for another task
+---
+hosts: webservers
+become: yes
+tasks:
+- name: install git
+  apt:
+   name: git
+
+- name: install wget 
+  apt:
+   namee: wget
+  ignore_errors: yes
+
+- name: install tree
+  apt:
+   name: tree
+
+
