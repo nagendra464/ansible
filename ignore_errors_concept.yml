@@ -7,13 +7,5 @@
     register: ansible3
     debug: 
       msg: "{{ansible3}}"
-  - name: output of jana    
-    command: "ls /home/ansible/jana"
-    register: ansible1
-    debug:
-      msg: "{{ansible1}}"
-  - name: output of devops    
-    command: "ls /home/ansible/Devops"
-    register: ansible2
-    debug: 
-      msg: "{{ansible2}}"
+    
+      
