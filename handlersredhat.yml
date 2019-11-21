@@ -13,7 +13,12 @@
      src: index.j2
      dest: /var/www/html/index.html
     notify: start services
+
+
   # under playbook we are going to write handlers 
+
+
+  
   handlers:
   - name: start services
     service:

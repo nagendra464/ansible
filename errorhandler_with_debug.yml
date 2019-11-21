@@ -4,15 +4,15 @@
   become: yes
   tasks:
   - name: linux commands execution
-    command: hostname -f
-    register: nagendra
+    command: hostname -f             # we are executing the linux commands
+    register: nagendra               # register key is used to store value
   - name: disply the result  
-    debug:
+    debug:                           # debug is used to display the stored value of the key
      msg: "{{nagendra}}"
   - name: install apache2
     apt:
      name: apache2
-    when: nagendra.stderr ==""
+    when: nagendra.stderr ==""      # If condition satisfy it will execute
   - name: updating the repos
     apt:
       name: "*"
@@ -25,4 +25,4 @@
   - name: install tree
     apt:
      name: tree
-    when: nagendra.stderr !=""   
+    when: nagendra.stderr !=""     # The condition is not satisfy it will not execute 

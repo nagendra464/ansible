@@ -7,13 +7,13 @@
     apt:
      name: apache2
      state: present
-    notify: remove
+    notify: remove                # using notify module we can handle the task
   - name: install tree
     apt:
      name: tree
      state: present
     
-  handlers:
+  handlers:                      # using handler we can reuse the code
   - name: remove  
     apt:
      name: apache2

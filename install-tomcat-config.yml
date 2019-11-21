@@ -19,7 +19,7 @@
       name: "{{req_java}}"
       state: present    
   - name: setting the java default
-    alternatives:
+    alternatives:                # It will set java version which we want
       name: java
       link: /usr/bin/java
       path: /usr/lib/jvm/{{set_java}}/bin/java
@@ -43,4 +43,4 @@
       src: server.xml.j2
       dest: /usr/local/latest/conf/server.xml
   - name: start the tomcat server
-    shell: nohup /usr/local/latest/bin/startup.sh & 
+    shell: nohup /usr/local/latest/bin/startup.sh &   # it will run in background when we apply nohup and &

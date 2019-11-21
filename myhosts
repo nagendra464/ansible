@@ -1,16 +1,21 @@
 [webservers]
+
 # This is ubuntu machine
 172.31.41.86
 # 172.31.40.27
+
 # This is RHEL machine
 # 172.31.35.207
 
 
 [ubuntuservers]
+
 # ubuntu-node1
 172.31.41.86
-# ubuntu node2
+
+# ubuntu-node2
 172.31.40.27
 
 [redhatservers]
+
 172.31.35.207

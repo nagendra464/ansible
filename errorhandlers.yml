@@ -10,7 +10,7 @@
   - name: install wget 
     apt:
      namee: wget
-    ignore_errors: yes
+    ignore_errors: yes      # if we want to skip error task 
 
   - name: install tree
     apt:

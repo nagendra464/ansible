@@ -7,7 +7,7 @@
     apt:
      name: apache2
      state: present
-    notify: start services
+    notify: start services                     
      
   - name: copy index.j2 to node server
     template:
@@ -15,7 +15,7 @@
      dest: /var/www/html/index.html
     notify: start services 
       # under playbook we are going to write handlers 
-  handlers:
+  handlers:                            # it will trigger if any changies in task
   - name: start services
     service:
      name: apache2
