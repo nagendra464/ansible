@@ -16,7 +16,7 @@
      msg: "{{nagendra}}" 
     ignore_errors: yes  
   - name: linux commands execution
-    command: "ls /home/ansible/Devops"            # we are executing the linux commands
+    command: "ls /home/ansible"            # we are executing the linux commands
     register: nagendra               # register key is used to store value
   - name: disply the result  
     debug:                           # debug is used to display the stored value of the key
