@@ -1,4 +1,4 @@
-# It is used for errorhandlers,based on first task result it will continue for another task
+# It is used for errorhandlers,using the ignore_errors condition
 ---
 - hosts: webservers
   become: yes

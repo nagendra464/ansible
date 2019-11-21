@@ -1,0 +1,11 @@
+# In this we are going to handle the error depanding on first result, we are giving the conditions based on first result
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: linux commands execution
+    command: hostname -f
+    register: nagendra
+  - name: disply the result  
+    debug:
+     msg: "{{nagendra}}"
