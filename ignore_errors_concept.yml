@@ -1,10 +1,10 @@
 ---
-- hosts: localhost
+- hosts: webservers
   become: yes
   tasks:
-  - name: display the result
-    command: "ls /home/ansible"
-    register: ansible3
-    debug: var= ansible3
-    
-      
+  - name: linux commands execution
+    command: hostname -f             # we are executing the linux commands
+    register: nagendra               # register key is used to store value
+  - name: disply the result  
+    debug:                           # debug is used to display the stored value of the key
+     msg: "{{nagendra}}"
