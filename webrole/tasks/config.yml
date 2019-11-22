@@ -1,12 +1,7 @@
 ---
-- name: apche2.conf file
-  copy:
-    src: apache2.conf
-    dest: /etc/apache2/apache2.conf
-  notify:
-  - service apache2 restart
-
 - name: copy html
   copy:
     src: index.j2
     dest: /var/www/html/index.html 
+  notify:
+  - service apache2 restart
