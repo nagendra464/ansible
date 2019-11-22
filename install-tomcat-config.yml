@@ -1,12 +1,12 @@
 ---
 - name: Install the tomcat and configure
-  hosts: 172.31.41.86
+  hosts: 172.31.40.27
   gather_facts: false
   become: yes
   vars:
     req_java: openjdk-8-jre
     set_java: java-1.8.0-openjdk-amd64
-    req_tom_version: 9.0.27
+    req_tom_version: 8.5.49
     tomcat_port: 8099
     tomcat_url: http://us.mirrors.quenda.co/apache/tomcat/tomcat-{{req_tom_version.split('.')[0]}}/v{{req_tom_version}}/bin/apache-tomcat-{{req_tom_version}}.tar.gz
   tasks:
