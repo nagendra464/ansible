@@ -1,6 +1,6 @@
 ---
 - name: Install the tomcat and configure
-  hosts: 172.31.40.27
+  hosts: 172.31.41.86
   gather_facts: false
   become: yes
   vars:
