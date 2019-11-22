@@ -1,5 +1,5 @@
 ---
-- hosts: 
+- hosts: 172.31.41.86
   become: yes
   tasks:
   - name: start
