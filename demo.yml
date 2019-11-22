@@ -1,0 +1,12 @@
+---
+- hosts: 
+  become: yes
+  tasks:
+  - name: start
+    apt:
+     name: apache2
+     state: present
+  - name: staert service
+    service:
+     name: apache2
+     state: started   
