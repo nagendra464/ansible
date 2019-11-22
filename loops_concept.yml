@@ -4,8 +4,8 @@
   tasks:
   - name: loop
     apt:
-     name: "{{items}}"
+     name: "{{ item }}"
      state: present
     loop:
-    - tree
-    - git 
+     - tree
+     - git 
