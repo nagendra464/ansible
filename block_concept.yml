@@ -5,7 +5,7 @@
   - block:
     - name: Install the apache2
       apt:
-       name: apache23
+       name: apache2
        state: present  
     - name: start apache
       service:
@@ -24,7 +24,7 @@
        state: present    
     - name: start apache2
       service:
-       name: httpds
+       name: httpd
        state: started  
     - name: place the index file in apache2
       template:
