@@ -9,6 +9,4 @@
 - name: copy html
   copy:
     src: index.j2
-    dest: /var/www/html/index.html
-  notify:
-  - service apache2 restart  
+    dest: /var/www/html/index.html 
