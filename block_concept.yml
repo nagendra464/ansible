@@ -5,7 +5,7 @@
   - block:
     - name: Install the apache2
       apt:
-       name: apache2
+       name: apache23
        state: present  
     - name: start apache
       service:
@@ -16,7 +16,7 @@
        src: index.j2
        dest: /var/www/html/index.html    
     when: ansible_os_family =="Debian" 
-
+    ignore_errors: yes
   - block:
     - name: Install the httpd
       yum:
