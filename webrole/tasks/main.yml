@@ -1,2 +1,5 @@
 ---
 # tasks file for webrole
+- include: apache.yml
+- include: config.yml
+- include: service.yml
