@@ -1,4 +1,6 @@
-# tags are used to fliter the tasks and to run particular task( --tags tagname )
+# tags are used to fliter the tasks and to run particular task( --tags "tagname" )
+#  ansible-playbook -i myhosts tags_concept.yml  --skip-tags "tree"
+
 ---
 - hosts: webservers
   become: yes
