@@ -1,6 +1,0 @@
-# This is ubuntu-node1 machine
----
-installjava: openjdk-9-jre
-webserstate: present
-webabsent: absent
-

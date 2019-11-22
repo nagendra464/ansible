@@ -35,8 +35,8 @@
     when: ansible_os_family =="RedHat"   
   - name: place the index file in apache2
     template:
-      src: index.html
-      dest: /var/www/html
+      src: index.j2
+      dest: /var/www/html/index.html
     when: ansible_os_family =="RedHat"   
      
       
