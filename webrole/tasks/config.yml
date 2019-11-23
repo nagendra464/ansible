@@ -4,11 +4,11 @@
    src: index.j2
    dest: /var/www/html/index.html
   notify: service apache2 restart
-  when: family_u
+  when: ansible_os_family =="Debian"
 
 - name: copy index file in redhat
   template:
    src: index.j2
    dest: /var/www/html/index.html
   notify: service http restart
-  when: family_r
+  when: ansible_os_family =="RedHat"

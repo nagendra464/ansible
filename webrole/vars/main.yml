@@ -1,7 +1,7 @@
 ---
 # vars file for webrole
 install_apache_ubuntu: apache2
-install_http_redhat: http
+install_http_redhat: httpd
 install_git: git
 install_tree: tree
 install_wget: wget

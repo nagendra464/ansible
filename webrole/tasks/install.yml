@@ -4,11 +4,11 @@
    name: "{{install_apache_ubuntu}}"
    state: present
   notify: service apache2 restart
-  when: family_u
+  when: ansible_os_family =="Debian"
 
 - name: install http in redhat
   yum:
    name: "{{install_http_redhat}}"
    state: present
   notify: service http restart
-  when: family_r   
+  when: ansible_os_family =="RedHat"   
