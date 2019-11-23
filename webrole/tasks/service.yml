@@ -3,10 +3,10 @@
   service:
    name: "{{install_apache_ubuntu}}"
    state: restarted
-  when: "{{family_u}}" 
+  when: family_u
 
 - name: start http redhat
   service:
    name: "{{install_http_redhat}}"
    state: restarted
-  when: "{{family_r}}"   
+  when: family_r   
