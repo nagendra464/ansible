@@ -2,5 +2,5 @@
 - hosts: webservers
   tasks:
   - name: hostname
-    debug:
-     var= ansible_hostname
+    debug: var=ansible_hostname
+     
