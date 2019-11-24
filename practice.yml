@@ -4,7 +4,7 @@
   become: yes                             # sudo permissions
   gather_facts: true                      # it will display the system details
   vars:                                   # variables declaration
-   ubuntu: apache
+   ubuntu: apache2
    redhat: httpd
   tasks:
   - block:                                # this block is used to execute the tasks
@@ -25,27 +25,29 @@
         state: started
         enabled: yes                     # it will start automatically when the system is booting
       notify: start apache2 
-    rescue:                               # this task is excute when the first task is fail
+   # rescue:                               # this task is excute when the first task is fail
     - name: loop
       apt:
         name: "{{item}}"
         state: present
       loop:                                # this is the loop concept
       - tree
-      - wget
-    
-      notify: start apache2  
-
-
+      - wget  
     - name: create the diretory
-      command: mkdir /home/ansible/"{{ item }}"
-      with_items:
+      command: mkdir /home/ansible/nagu"{{ item }}" # linux command excecution
+      register: condition
+      with_items:                         
       - nagu
       - jana
-      notify: start apache2    
 
+    - name: install git
+      apt:
+        name: git
+        state: present 
+      when: condition.strerr !=""   
+  
     when: ansible_os_family =="Debian"
-    ignore_errors: no                    # this is used to skip the task when there is any error
+    ignore_errors: yes                  # this is used to skip the task when there is any error
   - debug:
      msg: "successfull install the all tasks"
 
