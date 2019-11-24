@@ -40,33 +40,7 @@
      msg: "successfull install the all tasks"
 
 
-  - block:
-    - name: install httpd in redhat
-      yum:
-        name: "{{redhat}}"
-        state: present
-      notify: start httpd 
-    - name: copy the index into apache2
-      template:
-        src: index.j2
-        dest: /var/www/html/index.html
-      notify: start httpd
-    - name: start the apache2
-      service:
-        name: "{{redhat}}" 
-        state: started
-        enabled: yes 
-      notify: start httpd     
-    when: ansible_os_family =="RedHat"
-    ignore_errors: yes 
-  - debug:
-     msg: "successfull install the all tasks"
-
-
-     
-    
-
-
+  
 
   handlers:
   - name: start apache2
