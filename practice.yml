@@ -9,7 +9,7 @@
   - block:
     - name: install apache2
       apt:
-       name: "ubuntu"
+       name: "{{ubuntu}}"
        state: present
       notify: service restart
       when: ansible_os_family =="Debian"  
