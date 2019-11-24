@@ -2,6 +2,7 @@
 - name: This is practice session
   hosts: webservers
   become: yes
+  gather_facts: false
   vars:
    ubuntu: apache2
    redhat: httpd
@@ -12,4 +13,14 @@
        name: "{{ubuntu}}"
        state: present
       notify: service restart
-      when: ansible_os_family =="Debian"  
+    - name: copy the index into apache2
+      template:
+        src: index.html
+        dest: /var/www/html/index.html
+    - name: start the apache2
+      service:
+        name: "{{ubuntu}}" 
+        state: started
+        enabled: yes 
+    when: ansible_os_family =="Debian"
+    ignore_errors: yes        
