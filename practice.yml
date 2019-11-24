@@ -24,4 +24,14 @@
         state: started
         enabled: yes 
     when: ansible_os_family =="Debian"
-    ignore_errors: yes        
+    ignore_errors: yes 
+    notify: start apache2
+
+
+
+  handlers:
+  - name: start apache2
+    service:
+      name: "{{ubuntu}}"
+      state: restarted
+
