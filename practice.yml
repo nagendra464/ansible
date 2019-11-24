@@ -25,7 +25,7 @@
         state: started
         enabled: yes                     # it will start automatically when the system is booting
       notify: start apache2 
-   # rescue:                               # this task is excute when the first task is fail
+    rescue:                               # this task is excute when the first task is fail
     - name: loop
       apt:
         name: "{{item}}"
@@ -36,7 +36,7 @@
     - name: create the diretory
       command: mkdir /home/ansible/nagu"{{ item }}" # linux command excecution
       register: condition
-      with_items:                         
+      with_items:                         # without iteration
       - nagu
       - jana
 
@@ -44,14 +44,14 @@
       apt:
         name: git
         state: present 
-      when: condition.stdout ==""   
+      when: condition.stderr ==""         # if condition is satisfied then the git will install
   
     when: ansible_os_family =="Debian"
-    ignore_errors: no                # this is used to skip the task when there is any error
+    ignore_errors: yes               # this is used to skip the task when there is any error
   - debug:
      msg: "successfull install the all tasks"
 
-
+#   this is for redhat machine
   
   - block:
     - name: install httpd in redhat
@@ -71,7 +71,20 @@
         enabled: yes 
       notify: start httpd     
     when: ansible_os_family =="RedHat"
-    ignore_errors: yes 
+    ignore_errors: yes
+    rescue:
+     
+    - name: create the file                # create file using touch command
+      file:
+        path: /home/ansible/production/nag.txt
+        state: touch
+    always:
+    - name: install git in redhat
+      yum:
+        name: git
+        state: present
+
+
   - debug:
      msg: "successfull install the all tasks"
 
