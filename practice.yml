@@ -82,7 +82,7 @@
     - name: install git in redhat
       yum:
         name: git
-        state: absent
+        state: present
       notify: remove git
 
   - debug:
