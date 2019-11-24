@@ -10,13 +10,14 @@
   - block:
     - name: install apache2
       apt:
-       name: apache2
-       state: present
-    
+        name: apache2
+        state: present
+      when: ansible_os_family =="Debian"
     - name: copy the index into apache2
       template:
         src: index.html
         dest: /var/www/html/index.html
+      when: ansible_os_family =="Debian"
     - name: start the apache2
       service:
         name: apache2 
