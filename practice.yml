@@ -1,0 +1,15 @@
+---
+- name: This is practice session
+  hosts: webservers
+  become: yes
+  vars:
+   ubuntu: apache2
+   redhat: httpd
+  tasks:
+  - block:
+    - name: install apache2
+      apt:
+       name: "ubuntu"
+       state: present
+      notify: service restart
+      when: ansible_os_family =="Debian"  
