@@ -12,20 +12,21 @@
       apt:
         name: "{{ubuntu}}"
         state: present
-    
+      notify: start apache2
     - name: copy the index into apache2
       template:
         src: index.j2
         dest: /var/www/html/index.html
-    
+      notify: start apache2
     - name: start the apache2
       service:
         name: "{{ubuntu}}" 
         state: started
         enabled: yes 
+      notify: start apache2    
     when: ansible_os_family =="Debian"
     ignore_errors: yes 
-    notify: start apache2
+    
 
 
 
