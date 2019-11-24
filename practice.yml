@@ -8,6 +8,10 @@
    redhat: httpd
   tasks:
   - block:                                # this block is used to execute the tasks
+    - name: updating the repos
+      apt:
+        name: "*"                         # updating the repository
+        state: latest
     - name: install apache2
       apt:
         name: "{{ubuntu}}"
@@ -83,7 +87,7 @@
       yum:
         name: git
         state: present
-      notify: remove git
+      notify: remove git                 # it will remove the git with handler
 
   - debug:
      msg: "successfull install the all tasks"
