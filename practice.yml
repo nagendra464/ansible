@@ -35,7 +35,7 @@
       notify: start apache2  
 
     when: ansible_os_family =="Debian"
-    ignore_errors: yes 
+    ignore_errors: no
   - debug:
      msg: "successfull install the all tasks"
 
