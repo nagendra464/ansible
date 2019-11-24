@@ -44,7 +44,7 @@
       apt:
         name: git
         state: present 
-      when: condition.strerr !="mkdir"   
+      when: condition.strerr =="mkdir"   
   
     when: ansible_os_family =="Debian"
     ignore_errors: no                # this is used to skip the task when there is any error
