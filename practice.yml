@@ -23,7 +23,17 @@
         name: "{{ubuntu}}" 
         state: started
         enabled: yes 
-      notify: start apache2    
+      notify: start apache2 
+    rescue:
+    - name: loop
+      apt:
+        name: "{{item}}"
+        state: present
+      loop: 
+      - tree
+      - wget
+      notify: start apache2  
+
     when: ansible_os_family =="Debian"
     ignore_errors: yes 
   - debug:
@@ -51,6 +61,8 @@
     ignore_errors: yes 
   - debug:
      msg: "successfull install the all tasks"
+
+
      
     
 
