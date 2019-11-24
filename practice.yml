@@ -23,7 +23,7 @@
       service:
         name: "{{ubuntu}}" 
         state: started
-        enabled: no                     # it will start automatically when the system is booting
+        enabled: yes                     # it will start automatically when the system is booting
       notify: start apache2 
     rescue:                               # this task is excute when the first task is fail
     - name: loop
@@ -45,7 +45,7 @@
       notify: start apache2    
 
     when: ansible_os_family =="Debian"
-    ignore_errors: yes                     # this is used to skip the task when there is any error
+    ignore_errors: no                    # this is used to skip the task when there is any error
   - debug:
      msg: "successfull install the all tasks"
 
@@ -57,12 +57,12 @@
         name: "{{redhat}}"
         state: present
       notify: start httpd 
-    - name: copy the index into apache2
+    - name: copy the index into redhat
       template:
         src: index.j2
         dest: /var/www/html/index.html
       notify: start httpd
-    - name: start the apache2
+    - name: start the httpd
       service:
         name: "{{redhat}}" 
         state: started
