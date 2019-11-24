@@ -2,7 +2,7 @@
 - name: This is practice session
   hosts: webservers
   become: yes
-  gather_facts: false
+  gather_facts: true
   vars:
    ubuntu: apache2
    redhat: httpd
