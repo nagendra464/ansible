@@ -5,7 +5,8 @@
 # This is REDHAT machine
 172.31.39.234
 
-
+[applicationservers]
+172.31.3.59
 
 [ubuntuservers]
 172.31.10.185
