@@ -1,7 +1,17 @@
 ---
-- name: firewall settings
-  system/firewalld.py:
-    port: 8081/tcp
-    permanent: yes
-    state: disabled
+- name: Install firewalld
+  package:
+    name: firewalld
+    state: present
+
+
+- name: Allow external HTTP(S) traffic
+  firewalld:
+    service: "{{ item }}"
+    permanent: true
+    immediate: true
+    state: enabled
+  with_items:
+    - http
+    - https
   notify: restart tomcat  
