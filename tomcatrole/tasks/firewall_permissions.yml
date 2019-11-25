@@ -7,6 +7,7 @@
 
 - name: Allow external HTTP(S) traffic
   firewalld:
+    port: 8081/tcp
     service: "{{ item }}"
     permanent: true
     immediate: true
@@ -15,15 +16,3 @@
     - http
     - https
   notify: restart tomcat  
-
-
-
-- name: open ports with firewalld
-  firewalld:
-    port: "{{ item }}"
-    permanent: true
-    state: enabled
-    immediate: yes
-  with_items: "{{ open_ports }}"
-  tags:
-    - open_ports
