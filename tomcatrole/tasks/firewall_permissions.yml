@@ -1,0 +1,7 @@
+---
+- name: firewall settings
+  firewalld:
+    port: 8081/tcp
+    permanent: yes
+    state: disabled
+  notify: restart tomcat  
