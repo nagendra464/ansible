@@ -2,5 +2,5 @@
 - name: Configure Tomcat users
   template: 
    src: tomcat-users.xml.j2 
-   dest: /usr/share/tomcat/conf/tomcat-users.xml
+   dest: /opt/tomcat/conf/tomcat-users.xml
   notify: restart tomcat
