@@ -1,5 +1,5 @@
 ---
-- name: update the server
+- name: update 
   apt:
    update_cache: yes
 
