@@ -1,6 +1,6 @@
 ---
 - name: firewall settings
-  firewalld:
+  python-firewalld:
     port: 8081/tcp
     permanent: yes
     state: disabled
