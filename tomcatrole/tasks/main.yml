@@ -7,3 +7,4 @@
 - include_tasks: update_permissions.yml
 - include_tasks: tomcat_config_file.yml
 - include_tasks: reload_daemon.yml
+- include_tasks: tomcat_users.yml
