@@ -9,4 +9,5 @@
 - include_tasks: reload_daemon.yml
 - include_tasks: tomcat_users.yml
 - include_tasks: web_management.yml
+- include_tasks: tomcat_status_check.yml
 - include_tasks: java_application_deploy.yml
