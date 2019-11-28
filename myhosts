@@ -3,7 +3,7 @@
 # This is UBUNTU machine
 172.31.10.185
 # This is REDHAT machine
-172.31.39.234
+# 172.31.39.234
 
 [applicationservers]
 172.31.43.228
