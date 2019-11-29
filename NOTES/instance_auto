@@ -4,7 +4,7 @@
   gather_facts: true
   become: yes
   vars:
-   region: 
+   region: us-east-2
    instance_type: t2.micro
    ami: ami-0cd2464e563ef52b1
    keypair: ohioo
@@ -12,8 +12,6 @@
   tasks:
   - name: Create an ec2 instance
     ec2:
-     aws_access_key: 'AKIAIG3FQ37FERYQFRYA'
-     aws_secret_key: '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'
      key_name: "{{ keypair }}"
      group: Ansible
      instance_type: "{{ instance_type }}"
