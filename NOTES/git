@@ -21,3 +21,4 @@ git checkout FETCH_HEAD ---to get the data
 git checkout master    -----to get back to original data
   
 
+* git log --all --decorate --oneline --graph --- >to check the history details
