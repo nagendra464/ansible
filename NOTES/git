@@ -27,4 +27,11 @@ git checkout master    -----to get back to original data
 *  git config --global alias.lo log      ---- to create the alias name
 *  git config --list                    ----- to see all files in config
 *  git merge --abort                    ------ to come out from errors
-*  
+
+*  git revert -m 1 <commit-hash>     ----- to revert the merge in remote repository 
+*  git push -u origin master         ----- after revert 
+
+*  git clone -b SIT(branch name) https://github.com/nagendra464/Bank-project.git   ----- to clone particular branch
+*  gitk   -----to view in gui mode
+
+*  git branch -a      ------to view hidden branch
