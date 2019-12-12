@@ -35,3 +35,7 @@ git checkout master    -----to get back to original data
 *  gitk   -----to view in gui mode
 
 *  git branch -a      ------to view hidden branch
+*  git commit -a      --------to write the commit in vi editor
+*  git reset –-hard [commitid]  --------to reset local repository
+*  git log --follow filename     -----------to view particular commits for a file
+*  git log -p   ----------------to see full project logs
