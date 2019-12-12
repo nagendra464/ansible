@@ -26,3 +26,5 @@ git checkout master    -----to get back to original data
 *  git config --global --unset alias.lo  --- to delete the alias name
 *  git config --global alias.lo log      ---- to create the alias name
 *  git config --list                    ----- to see all files in config
+*  git merge --abort                    ------ to come out from errors
+*  
