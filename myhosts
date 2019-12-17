@@ -2,7 +2,7 @@
 
 # This is UBUNTU machine
 # 172.31.47.146
-172.31.37.70
+# 172.31.37.70
 
 # This is REDHAT machine
 
@@ -17,4 +17,4 @@
 
 [redhatservers]
 
-
+172.31.34.215
