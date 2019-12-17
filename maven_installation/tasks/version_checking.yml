@@ -1,6 +1,9 @@
 ---
-- name: maven version checking
-  shell: maven -version 2>&1 | grep version | awk '{print $3}' | sed 's/"//g' 
-  register: maven_version 
-  debug: var=maven_version
+- name: check widgetizer version
+  command: "{{maven}} --version"
+  register: result_b
+  when: "result_a.stat.exists"
+  changed_when: False
+  failed_when: False
+  tags: widgetizer
   ignore_errors: yes
