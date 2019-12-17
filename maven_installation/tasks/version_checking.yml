@@ -1,0 +1,5 @@
+---
+- name: maven version checking
+  shell: maven -version 2>&1 | grep version | awk '{print $3}' | sed 's/"//g' 
+  register: maven_version 
+  debug: var=maven_version
