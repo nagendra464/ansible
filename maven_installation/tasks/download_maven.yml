@@ -2,13 +2,13 @@
 - name: Download the maven
   get_url:
    url: http://apachemirror.wuchna.com/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz
-   dest: /home/apache-maven-3.6.3-bin.tar.gz
+   dest: /home/ansible/apache-maven-3.6.3-bin.tar.gz
    force_basic_auth: yes
 
 
 - name: extract the tar file
   command:
-   cmd: sudo tar xzvf /home/apache-maven-3.6.3-bin.tar.gz -C /opt/maven --strip-components=1   
+   cmd: sudo tar xzvf /home/ansible/apache-maven-3.6.3-bin.tar.gz -C /opt/maven --strip-components=1   
    creates: /opt/maven/LICENSE
 
 
