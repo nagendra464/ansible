@@ -3,4 +3,4 @@
   template:
    src: mavenenv.sh.j2
    dest: /etc/profile.d/mavenenv.sh
-  notify: restart tomcat
+  notify: restart maven
