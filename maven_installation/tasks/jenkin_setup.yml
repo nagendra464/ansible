@@ -1,0 +1,6 @@
+---
+- name: install the jenkins
+  hosts: webservers
+  become: yes
+  roles:
+  - {role: maven_installation}
