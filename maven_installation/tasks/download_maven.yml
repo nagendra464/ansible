@@ -11,6 +11,3 @@
    cmd: sudo tar xzvf /home/ansible/apache-maven-3.6.3-bin.tar.gz -C /opt/maven --strip-components=1   
    creates: /opt/maven/LICENSE
 
-
-- name: Update path for maven use
-  shell: export PATH=/opt/maven/bin:$PATH 
