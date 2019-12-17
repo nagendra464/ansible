@@ -1,8 +1,8 @@
 [webservers]
 
 # This is UBUNTU machine
-172.31.47.146
-
+# 172.31.47.146
+172.31.37.70
 
 # This is REDHAT machine
 
@@ -10,7 +10,7 @@
 [applicationservers]
 
 [ubuntuservers]
-172.31.41.141
+# 172.31.41.141
 
 
 
