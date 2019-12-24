@@ -1,7 +1,7 @@
 ---
 - name: deploy java application
   get_url:
-    url: http://34.220.212.21:8081/artifactory/nagendra/2/target/mahaLogin-1.0.war
+    url: http://54.191.192.173:8081/artifactory/NAGENDRA/{{build_number}}/target/mahaLogin-1.0.war
     dest: /opt/tomcat/webapps/mahaLogin.war
     username: admin
     password: password
