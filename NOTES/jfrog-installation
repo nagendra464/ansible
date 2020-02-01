@@ -4,6 +4,7 @@
 * Firstly we have to register in jfrog artifactory login
 * Create the instance with RHEL machine with minimumn of 4GB Ram
 * Install the java
+sudo yum install java-1.8.0-openjdk-devel
 * Install the jrog from the instructions which are given in mail
 * And select ARTIFACTORY PRO RPM INSTALLER to install the jfrog
 * The default portnumber is 8081 for jfrog

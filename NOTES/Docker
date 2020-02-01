@@ -1,0 +1,46 @@
+* Docker is a container management service. The keywords of Docker are develop, ship and run anywhere. 
+* Docker is for developers to easily develop applications, ship them into containers which can then be deployed anywhere.
+
+------Features of Docker-----------------------
+
+* Docker has the ability to reduce the size of development by providing a smaller footprint of the operating system via containers.
+
+* With containers, it becomes easier for teams across different units, such as development, QA and Operations to work seamlessly across applications.
+
+* You can deploy Docker containers anywhere, on any physical and virtual machines and even on the cloud.
+
+* Since Docker containers are pretty lightweight, they are very easily scalable.
+
+------------shows the standard and traditional architecture of virtualization.-----------------
+
+* The server is the physical server that is used to host multiple virtual machines.
+
+* The Host OS is the base machine such as Linux or Windows.
+
+* The Hypervisor is either VMWare or Windows Hyper V that is used to host virtual machines.
+
+* You would then install multiple operating systems as virtual machines on top of the existing hypervisor as Guest OS.
+
+* You would then host your applications on top of each Guest OS.
+
+------------------shows the new generation of virtualization that is enabled via Dockers--------
+
+* The server is the physical server that is used to host multiple virtual machines. So this layer remains the same.
+
+* The Host OS is the base machine such as Linux or Windows. So this layer remains the same.
+
+* Now comes the new generation which is the Docker engine. This is used to run the operating system which earlier used to be virtual machines as Docker containers.
+
+* All of the Apps now run as Docker containers.
+
+NOTE : Docker engine is that it is designed to work on various operating systems
+
+* CMD Instruction
+This command is used to execute a command at runtime when the container is executed.
+
+* ENTRYPOINT
+This command can also be used to execute commands at runtime for the container. But we can be more flexible with the ENTRYPOINT command.
+
+
+
+
