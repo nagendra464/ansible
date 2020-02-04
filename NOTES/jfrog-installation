@@ -14,3 +14,4 @@ sudo yum install java-1.8.0-openjdk-devel
                 password === password
 *                 
 
+systemctl start artifactory.service
