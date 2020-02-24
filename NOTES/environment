@@ -1,0 +1,36 @@
+JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+PATH=$PATH:$HOME/bin:$JAVA_HOME/bin
+export JAVA_HOME
+export JRE_HOME
+export PATH
+
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -
+
+sudo systemctl status elasticsearch.service
+
+curl -X GET http://192.168.0.1:9200
+
+
+
+
+input {
+   beats {
+       port => "5044"
+   }
+}
+output {
+   elasticsearch {
+       hosts => [ "172.31.10.133:9200" ]
+       index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+       document_type => "%{[@metadata][type]}"
+   }
+}
+curl -H 'Content-Type: application/json' -XPUT 'http://3.12.147.45:9200/_template/filebeat' -d@/etc/filebeat/filebeat.template.json
+
+
+Set-ExecutionPolicy unrestricted
+
+
+.\winlogbeat.exe -e -configtest
+
+Invoke-WebRequest -Method Put -InFile winlogbeat.template.json -Uri  http://3.12.147.45:9200/_template/winlogbeat?pretty -ContentType application/json

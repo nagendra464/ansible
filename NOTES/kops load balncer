@@ -1,0 +1,1 @@
+aws elb create-load-balancer --load-balancer-name nag --listeners "Protocol=HTTP,LoadBalancerPort=80,InstanceProtocol=HTTP,InstancePort=80" --subnets subnet-4b465100 --security-groups sg-e4db7ebf
