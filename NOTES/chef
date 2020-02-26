@@ -1,0 +1,19 @@
+ 
+#-------------to connect the node from workstation----------------------
+knife bootstrap 3.15.148.28 --ssh-user ubuntu --sudo --ssh-identity-file "D:\pratice.pem" -N Node01
+
+
+#-----------------perminate delete------------------------------
+sudo apt-get remove --purge oracle-java9-installer
+sudo apt-get remove --purge icedtea-* openjdk-*
+
+
+# --- certificate---------------------------------
+chef gem install winrm
+chef gem install knife-windows
+
+#-------------------- to add the cookbook to node---------------------------------
+knife node run-list add Node01 "recipe[apachedemo]"
+
+#----------------------to create the cookbook----------------------------
+chef generate cookbook --berks demo

@@ -1,0 +1,45 @@
+pipeline {
+    agent any
+    environmemt {
+       TAG = getdockertag()
+   }   
+   stages {
+      stage('Build') {
+        steps {
+           git 'https://github.com/nagendra464/project.git'
+        }
+    }
+     stage('mvn goals') {
+        steps {
+        sh label: '', script: 'mvn clean install package'
+        }
+    }
+    
+    stage('Build image') {
+       
+        steps {
+        sh label: '', script: 'docker build -t nagendra464/naglogin:1 .'
+        }
+    }
+
+    stage('Push image') {
+        steps {
+        withCredentials([string(credentialsId: 'dockerpwd', variable: 'dockerpwd')]) {
+            sh label: '', script: "docker login -u nagendra464 -p ${dockerpwd}"
+       }
+        
+        sh label: '', script: 'docker push nagendra464/naglogin:1'
+      
+        }
+    }        
+ 
+         
+
+         
+      }
+    }
+      def getdockertag(){
+          def tag = sh script: 'git rev-parse HEAD', returnStdout = true
+          return tag
+      
+   }
