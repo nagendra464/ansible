@@ -17,3 +17,7 @@ knife node run-list add Node01 "recipe[apachedemo]"
 
 #----------------------to create the cookbook----------------------------
 chef generate cookbook --berks demo
+
+#----berks---------------
+berks install
+berks upload
