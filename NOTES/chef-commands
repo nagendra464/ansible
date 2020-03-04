@@ -1,6 +1,6 @@
  
 #-------------to connect the node from workstation----------------------
-knife bootstrap 3.15.148.28 --ssh-user ubuntu --sudo --ssh-identity-file "D:\pratice.pem" -N Node01
+knife bootstrap 3.17.25.26 --ssh-user ubuntu --sudo --ssh-identity-file "D:\pratice.pem" -N Node01
 
 
 #-----------------perminate delete------------------------------
@@ -18,6 +18,43 @@ knife node run-list add Node01 "recipe[apachedemo]"
 #----------------------to create the cookbook----------------------------
 chef generate cookbook --berks demo
 
-#----berks---------------
+#------------------------------berks---------------------------
 berks install
 berks upload
+
+
+#-------------------------To create custom attributes------------
+chef generate attribute . default
+
+
+#--------------In default attribute------------------
+
+if node['platform'] == 'ubuntu'
+
+    default['apacheserver']['server']='apache2'
+    
+end
+    
+if node['platform'] == 'redhat'
+    
+    default['apacheserver']['server']='httpd'
+    
+end
+
+#--------------------------In recipe------------------------
+
+
+myserver=node['apacheserver']['server']
+
+
+NOTE: apacheserver: cookbookname
+      server: own attribute name
+
+package 'myserver' do
+  action :install
+end
+service 'myserver' do
+  action :start
+end
+
+
