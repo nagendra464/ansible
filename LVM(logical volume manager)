@@ -1,0 +1,46 @@
+ 
+ 
+ 11.1. What is LVM?
+ 
+LVM is a tool for logical volume management which includes allocating disks, striping, mirroring and resizing logical volumes.
+With LVM, a hard drive or set of hard drives is allocated to one or more physical volumes. LVM physical volumes can be placed on other block devices which might span two or more disks.
+The physical volumes are combined into logical volumes, with the exception of the /boot partition. The /boot partition cannot be on a logical volume group because the boot loader cannot read it. If the root (/) partition is on a logical volume, create a separate /boot partition which is not a part of a volume group.
+Since a physical volume cannot span over multiple drives, to span over more than one drive, create one or more physical volumes per drive.
+Logical Volumes
+Figure 11.1. Logical Volumes
+
+The volume groups can be divided into logical volumes, which are assigned mount points, such as /home and / and file system types, such as ext2 or ext3. When "partitions" reach their full capacity, free space from the volume group can be added to the logical volume to increase the size of the partition. When a new hard drive is added to the system, it can be added to the volume group, and partitions that are logical volumes can be increased in size.
+Logical Volumes
+Figure 11.2. Logical Volumes
+
+On the other hand, if a system is partitioned with the ext3 file system, the hard drive is divided into partitions of defined sizes. If a partition becomes full, it is not easy to expand the size of the partition. Even if the partition is moved to another hard drive, the original hard drive space has to be reallocated as a different partition or not used.
+ 
+ 
+ 1  apt-get update
+    2  fdisk -l   -- to see how many volumes are there
+    
+    4  fdisk /dev/xvdb  --and entering  into new volume
+    5  press - p - to see how many paritions are there
+       press - n - to create the new partitions
+       And again press - p for primary partitions
+       And select the how many partitins do you want press 1
+       And give the size of the disk in default line
+       The volumes must be in LVM type so press t after that give the type code i.e 8e	 
+       To save and write type wq
+       	 
+    8  partprobe /dev/xvdb  - to move to kernal os
+    9  pvcreate /dev/xvdb1   - to create a primary partition
+   10  pvs   - to see the primary partition type
+   11  vgcreate VG0 /dev/xvdb1  -- to add into volume
+   12  vgs  --- to see volume group type
+   13  lvcreate -n lv0 -L +1G VG0  --- to create a logical volume type
+   14  lvdisplay /dev/VG0/lv0  ---  to see full details of logical volumes
+   15  mkfs.ext4 /dev/VG0/lv0   ---  format the volume
+       mkdir /lv0    ----   to create the directory
+   16  mount /dev/VG0/lv0 /lv0  ---- mount the volume
+   17  df -h
+   18  cd /lv0  to enter into volume
+   19  touch nag
+   20  ls
+   21  cd ..
+  

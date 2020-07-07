@@ -22,7 +22,7 @@ ssh -i "ohioo.pem" ec2-user@ec2-18-188-123-178.us-east-2.compute.amazonaws.com
 mkdir -p /var/recovery-disk
 
 # Mount the disk
-mount -o nouuid /dev/xva1/var/recovery-disk
+mount -o nouuid /dev/xvdf1/var/recovery-disk
 
 # Copy over the authorized keys
 cp /home/ec2-user/.ssh/authorized_keys  /var/recovery-disk/home/ec2-user/.ssh/authorized_keys

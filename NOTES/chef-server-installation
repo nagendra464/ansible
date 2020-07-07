@@ -1,0 +1,35 @@
+------------------------------STEP --1
+
+wget      https://packages.chef.io/files/stable/chef-server/13.1.13/ubuntu/16.04/chef-server-core_13.1.13-1_amd64.deb
+
+-------------------------------STEP--2
+
+dpkg -i chef-server-core_13.1.13-1_amd64.deb
+
+--------------------------------STEP --3
+
+sudo chef-server-ctl reconfigure
+
+--------------------------------STEP---4
+
+sudo chef-server-ctl user-create USER_NAME FIRST_NAME LAST_NAME EMAIL 'PASSWORD' --filename FILE_NAME
+
+sudo chef-server-ctl user-create bheemuni nagendra babu nagendra@gmail.com 'nagendra123' --filename /home/ubuntu/nagendra.pem
+
+-------------------------------STEP---5
+
+sudo chef-server-ctl org-create short_name 'full_organization_name' --association_user user_name --filename ORGANIZATION-validator.pem
+
+sudo chef-server-ctl org-create nagendra 'savina, Inc.' --association_user bheemuni --filename /home/ubuntu/savina-validator.pem
+
+-----------------------------------STEP---6
+
+sudo chef-server-ctl reconfigure
+
+------------------------------------STEP---7
+COPY THE PUBLIC SERVER OF SERVER AND PASTE IN BROWSER
+
+
+ # chef-server-ctl install chef-manage 
+ # chef-server-ctl reconfigure 
+ # chef-manage-ctl reconfigure 
